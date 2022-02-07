@@ -30,7 +30,7 @@ export default function TransfersChart (props) {
                 ["From", "To", "Amount"]
             ];
                
-            transfers?.map((item, index)=>{
+            transfers?.forEach((item)=>{
                 data.push([labelsMap[item.from], labelsMap[item.to], item.val]);
             });
 
