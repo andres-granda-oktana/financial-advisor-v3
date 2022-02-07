@@ -1,13 +1,340 @@
+/* Header */
+.headerPage{
+  min-height: 110px; 
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  margin-bottom: 4ch;
+  box-shadow: 0 4px 3px rgb(1 87 155 / 50%);
+}
+.headerPage h1{
+  text-align: center;
+  color: whitesmoke;
+}
+
+/* Common */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  background: #fefefe;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #0a0a0a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  font-style: normal;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+h1, .h1 {
+  font-size: 1.7rem;
+}
+/* Only affects medium screens and larger */
+@media screen and (min-width: 640px) {
+  h1, .h1 {
+      font-size: 3rem;
+  }
+}
+h2, .h2 {
+  font-size: 1.5rem;
+}
+/* Only affects medium screens and larger */
+@media screen and (min-width: 640px) {
+  h2, .h2 {
+      font-size: 2.4rem;
+  }
+}
+h3, .h3 {
+  font-size: 1.3rem;
+}
+/* Only affects medium screens and larger */
+@media screen and (min-width: 640px) {
+  h3, .h3 {
+      font-size: 1.9rem;
+  }
+}
+h4, .h4 {
+  font-size: 1.1rem;
+}
+/* Only affects medium screens and larger */
+@media screen and (min-width: 640px) {
+  h4, .h4 {
+      font-size: 1.6rem;
+  }
+}
+
+.container{
+  max-width: 1440px;
+  margin: auto;
+}
+
+a{
+  line-height: inherit;
+  color: #1779ba;
+  text-decoration: none;
+  cursor: pointer;
+}
+.text-center {
+  text-align: center;
+}
+
+
+/* Common table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 0;
+}
+table.hover tbody tr:hover {
+  background-color: #f9f9f9;
+}
+table.unstriped tbody {
+  background-color: #fefefe;
+}
+table.unstriped tbody tr {
+  border-bottom: 1px solid #f1f1f1;
+  background-color: #fefefe;
+}
+thead {
+  background: #f8f8f8;
+  color: #0a0a0a;
+  display: table-header-group;
+  vertical-align: middle;
+}
+thead, tbody, tfoot {
+  border: 1px solid #f1f1f1;
+  background-color: #fefefe;
+}
+thead tr, tfoot tr {
+  background: transparent;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+thead th, thead td, tfoot th, tfoot td {
+  padding: 0.5rem 0.625rem 0.625rem;
+  font-weight: bold;
+  text-align: left;
+}
+tbody th, tbody td {
+  padding: 0.5rem 0.625rem 0.625rem;
+  margin: 0;
+}
+
+/* Common button */
+.button{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 0 0;
+  padding: 0.85em 1em;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-family: inherit;
+  font-size: 0.9rem;
+  -webkit-appearance: none;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+}
+.button.disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+.button.primary {
+  background-color: #1779ba;
+  color: #fefefe; 
+}
+.button.primary:hover {
+  background-color: #126195;
+  color: #fefefe; 
+}
+.button.hollow {
+  background-color: transparent;
+}
+.button.hollow.secondary {
+  border: 1px solid #767676;
+  color: #767676;
+}
+.button.hollow.secondary:hover {
+  border-color: #3b3b3b;
+  color: #3b3b3b;
+}
+
+/* Common visibility */
+@media screen and (max-width: 1023px){
+  .show-for-large {
+      display: none !important;
+  }
+}
+
+/* Common flexbox classes */
+.flex-container {
+  display: flex;
+}
+.flex-dir-column {
+  flex-direction: column;
+}
+.align-center-middle {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+@media screen and (min-width: 1024px){
+  .large-flex-dir-row {
+      flex-direction: row;
+  }
+}
+
+/* RiskProfilerPage */
+.riskProfilerTitle{
+  margin-bottom: 2rem;
+}
+
+.riskProfilerPickerContainer{
+  margin-bottom: 1.5rem;
+}
+
+.riskProfilerLevelsTableRow{
+  cursor: pointer;
+}
+.riskProfilerLevelsTableRow-active{
+background-color: #1779ba !important;
+color: white;
+}
+
+.riskProfilerClear button{
+  margin: 0 1rem;
+  padding: 1.5em 2em;
+}
+.riskProfilerContinue a{
+  margin: 0 1rem;
+  padding: 1.5em 1em;
+}
+
+.riskProfilerLevelButton{
+  margin: 0em 0.2em;
+  padding: 1.5em 1.5em;
+
+}
+
+/* PortfolioAdvisor */
+
+.portfolioAdvisorTitle{
+  margin-bottom: 2rem;
+}
+.portfolioAdvisorLevelTitle{
+  margin-bottom: 1rem;
+}
+.portfolioAdvisorAmountsTitle{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.levelTable{
+  max-width: 70ch;
+}
+
+/* Only affects large screens */
+@media screen and (min-width: 1024px) {
+  .amountsTable{
+      min-width: 48ch;
+      width: 48ch;
+  }
+}
+
+.amountsTable input{
+  max-width: 8ch;
+  font-size: 100%;
+}
+.amountsTable td{
+  height: 3em;
+}
+
+.transfersTable td{
+  height: 3em;
+}
+
+.transfersChart{
+  min-width: 26ch;
+  width: 26ch;
+}
+.transfersChart td{
+  height: 15em;
+  padding: 2ch;
+}
+
+.portfolioAdvisorButtonContainer{
+  margin: 1rem 0rem;
+}
+
+.homePortfolioAdvisor {
+  margin: 0ch 0.5ch;  
+}
+/* Only affects medium screens and larger */
+@media screen and (min-width: 640px) {
+  .homePortfolioAdvisor{
+      margin: 0ch 2ch;
+  }
+}
+
+.clearPortfolioAdvisor {
+  margin: 0ch 0.5ch;
+
+}
+/* Only affects medium screens and larger */
+@media screen and (min-width: 640px) {
+  .clearPortfolioAdvisor{
+      margin: 0ch 2ch;
+  }
+}
+
+.calculateButton {
+  margin: 0ch 0.5ch;
+
+}
+/* Only affects medium screens and larger */
+@media screen and (min-width: 640px) {
+  .calculateButton{
+      margin: 0ch 2ch;
+  }
+}
+
+.homePortfolioAdvisor a{
+  padding: 1em 2em;
+}
+
+.clearPortfolioAdvisor button{
+  padding: 1em 2em;
+}
+
+.calculateButton button{
+  padding: 1em 2em;
+}
+
+.inputDifferencePositive{
+  color: white;
+  background-color: #109618 !important;
+}
+.inputDifferenceNegative{
+  color: white;
+  background-color: #DC3912 !important;
 }
